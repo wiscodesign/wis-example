@@ -12,7 +12,7 @@ export function hasLayout(name: string) {
   return name in window.$__wis_layouts__;
 }
 
-function getLayout(): undefined | ComponentType<any> {
+function getLayout(): undefined | ComponentType<Record<string, unknown>>{
   const pathname = window.location.hash.replace("#", "").split("?")[0]
   const [layoutName] = pathname.split("/").filter(Boolean);
 
@@ -21,7 +21,7 @@ function getLayout(): undefined | ComponentType<any> {
 }
 
 function useLayout() {
-  const [Layout, setLayout] = useState<ComponentType<any>>(getLayout())
+  const [Layout, setLayout] = useState<undefined | ComponentType<Record<string, unknown>>>(getLayout())
 
   useRouterChange(() => {
     setLayout(getLayout())

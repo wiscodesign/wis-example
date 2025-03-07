@@ -23,21 +23,21 @@ function getRouteParts(): string[] {
 }
 
 function useApplication() {
-  const [Application, setApplication] = useState<ComponentType<any>>();
+  const [Application, setApplication] = useState<ComponentType<Record<string, unknown>>>();
   const [ready, setReady] = useState(false);
   const [basename, setBasename] = useState("/");
 
   async function install() {
     let [maybeLayout, maybeApp] = getRouteParts();
 
-    let layout;
+    let layout: string | undefined;
     if (hasLayout(maybeLayout)) {
       layout = maybeLayout;
     } else {
       maybeApp = maybeLayout;
     }
 
-    let app;
+    let app: string | undefined;
     if (hasApplication(maybeApp)) {
       app = maybeApp;
     }
@@ -48,7 +48,8 @@ function useApplication() {
     }
 
     if (app) {
-      setApplication(lazy(() => remote(`${app}/$application`).then(mod => {
+      setApplication(lazy(() => remote(`${app}/$application`).then((mod) => {
+        // @ts-ignore
         return { default: mod.Application }
       })));
     }
@@ -62,10 +63,11 @@ function useApplication() {
     setBasename("/");
   }
 
-  useRouterChange((location) => {
+  useRouterChange(() => {
     reset();
   });
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (!ready) {
       install();
