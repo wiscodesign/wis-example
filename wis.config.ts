@@ -4,7 +4,7 @@ const config: WisConfig = {
   name: "example",
 
   exposes: {
-    "./Button": "./src/packages/button/Button",
+
   },
 };
 

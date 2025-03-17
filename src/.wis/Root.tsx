@@ -1,10 +1,29 @@
+import {
+  RouterProvider,
+  createHashRouter as createRouter,
+} from "wiscore/router";
+
 import { Layout } from "./layouts/Index";
-import { App } from "./App";
+import { useApplication } from "./useApplication";
+
+// @ts-ignore
+window.$__wis_router__ = "hashRouter";
 
 export default function Root() {
+  const { routes, basename, ready } = useApplication()
+
+  if (!ready) {
+    return null
+  }
+
+  const rootRoutes = [
+    {
+      Component: Layout,
+      children: routes,
+    }
+  ]
+
   return (
-    <Layout>
-      <App />
-    </Layout>
+    <RouterProvider router={createRouter(rootRoutes, { basename })} />
   )
 }

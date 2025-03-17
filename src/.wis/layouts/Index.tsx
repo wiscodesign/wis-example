@@ -1,7 +1,8 @@
 import { useState } from "react";
-import type { ReactNode, ComponentType } from "react";
-import { useRouterChange } from "wiscore/router";
+import { useRouterChange, Outlet } from "wiscore/router";
 
+
+import { Error } from "../Error";
 
 // @ts-ignore
 window.$__wis_layouts__ = {
@@ -12,30 +13,40 @@ export function hasLayout(name: string) {
   return name in window.$__wis_layouts__;
 }
 
-function getLayout(): undefined | ComponentType<Record<string, unknown>>{
+function getLayout(): string {
   const pathname = window.location.hash.replace("#", "").split("?")[0]
   const [layoutName] = pathname.split("/").filter(Boolean);
 
-  // @ts-ignore
-  return window.$__wis_layouts__[layoutName];
+  return layoutName;
 }
 
 function useLayout() {
-  const [Layout, setLayout] = useState<undefined | ComponentType<Record<string, unknown>>>(getLayout())
+  const [layout, setLayout] = useState<string>(getLayout())
 
   useRouterChange(() => {
     setLayout(getLayout())
   })
 
-  return Layout;
+  // @ts-ignore
+  return window.$__wis_layouts__[layout];
 }
 
-export function Layout({ children }: { children: ReactNode }) {
+export function Layout() {
   const Layout = useLayout();
 
   if (!Layout) {
-    return children;
+    return (
+      <Error>
+        <Outlet />
+      </Error>
+    );
   }
 
-  return <Layout>{children}</Layout>;
+  return (
+    <Layout>
+      <Error>
+        <Outlet />
+      </Error>
+    </Layout>
+  );
 }
