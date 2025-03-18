@@ -4,7 +4,10 @@ const config: WisConfig = {
   name: "example",
 
   exposes: {
-
+    "./page": {
+      "pc": "./src/packages/page/pc/index",
+      "mobile": "./src/packages/page/mobile/index",
+    },
   },
 };
 

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useRouterChange, Outlet } from "wiscore/router";
 
+import LIndex from "./lIndex";
 
-import { Error } from "../Error";
+import { ErrorBoundary } from "../ErrorBoundary";
 
 // @ts-ignore
 window.$__wis_layouts__ = {
+  "index": LIndex,
 }
 
 export function hasLayout(name: string) {
@@ -28,7 +30,7 @@ function useLayout() {
   })
 
   // @ts-ignore
-  return window.$__wis_layouts__[layout];
+  return window.$__wis_layouts__[layout] || window.$__wis_layouts__.index;
 }
 
 export function Layout() {
@@ -36,17 +38,17 @@ export function Layout() {
 
   if (!Layout) {
     return (
-      <Error>
+      <ErrorBoundary>
         <Outlet />
-      </Error>
+      </ErrorBoundary>
     );
   }
 
   return (
     <Layout>
-      <Error>
+      <ErrorBoundary>
         <Outlet />
-      </Error>
+      </ErrorBoundary>
     </Layout>
   );
 }

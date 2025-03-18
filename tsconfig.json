@@ -18,6 +18,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
+      "example/*": ["./src/packages/*/index", "./src/packages/*/pc/index"],
       "*": [
         "./@mf-types/*"
       ]

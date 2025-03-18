@@ -1,3 +1,3 @@
 export default function Index() {
-  return <div>Welcome to Wis Example111222</div>
+  return <div>Welcome to Wis Example</div>
 }

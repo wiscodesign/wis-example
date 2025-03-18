@@ -11,6 +11,7 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@rsbuild/plugin-sass": "1.2.2",
     "@wisdesign/lsicon": "0.0.19",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -25,5 +26,10 @@
     "@types/react-dom": "19.0.4",
     "@wisdesign/wis-plugin": "0.0.7",
     "typescript": "5.7.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@wisdesign/wis-plugin": "link:../wis-cli/packages/wis-plugin"
+    }
   }
 }
