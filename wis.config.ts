@@ -8,6 +8,22 @@ const config: WisConfig = {
       "pc": "./src/packages/page/pc/index",
       "mobile": "./src/packages/page/mobile/index",
     },
+    "./actions": {
+      "pc": "./src/packages/actions/pc/index",
+      "mobile": "./src/packages/actions/mobile/index",
+    },
+    "./button": {
+      "pc": "./src/packages/button/pc/index",
+      "mobile": "./src/packages/button/mobile/index",
+    },
+    "./list": {
+      "pc": "./src/packages/list/pc/index",
+      "mobile": "./src/packages/list//mobile/index",
+    },
+    "./detail": {
+      "pc": "./src/packages/detail/pc/index",
+      "mobile": "./src/packages/detail/mobile/index",
+    },
   },
 };
 
