@@ -24,6 +24,10 @@ const config: WisConfig = {
       "pc": "./src/packages/detail/pc/index",
       "mobile": "./src/packages/detail/mobile/index",
     },
+    "./modal": {
+      "pc": "./src/packages/modal/pc/index",
+      "mobile": "./src/packages/modal/mobile/index",
+    },
   },
 };
 

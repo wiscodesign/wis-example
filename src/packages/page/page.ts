@@ -12,6 +12,8 @@ export interface RightRef {
 }
 
 export interface RightProps {
+  title: string;
+
   ref?: Ref<RightRef>;
 
   children: ReactNode;

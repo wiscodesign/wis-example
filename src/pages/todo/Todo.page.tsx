@@ -5,12 +5,14 @@ import { Actions } from "example/actions";
 import { Button } from "example/button";
 import { List, type Item } from "example/list";
 import { Detail } from "example/detail";
+import { Modal, type ModalRef } from "example/modal";
 
 function Todo() {
   const right = useRef<RightRef>(null);
+  const addModal = useRef<ModalRef>(null);
   const [data, setData] = useState([
     {
-      key: "todo1",
+      key: `UID_${Date.now()}`,
       title: "Learn Wis Cross Application",
       description:
         "Wis is the open-source design system of Wis Design, aimed at providing excellent user experience for B-end products. This system provides runnable code, design tools, and product design guidelines based on an essence-based design language.",
@@ -24,23 +26,16 @@ function Todo() {
   }
 
   function handleAdd() {
-    setData(
-      data.concat({
-        key: `todo_${Date.now()}`,
-        title: "Learn Wis Cross Application",
-        description:
-          "Wis is the open-source design system of Wis Design, aimed at providing excellent user experience for B-end products. This system provides runnable code, design tools, and product design guidelines based on an essence-based design language.",
-      })
-    );
+    addModal.current?.open();
   }
 
   return (
     <Page title="TODO">
       <Actions>
-        <Button text="Add" onClick={handleAdd} />
+        <Button text="Add" variant="primary" onClick={handleAdd} />
       </Actions>
       <List data={data} onSelect={handleSelect} />
-      <Right ref={right}>
+      <Right title={selectItem?.key || "View Detail"} ref={right}>
         {selectItem && (
           <Detail
             title={selectItem.title}
@@ -48,6 +43,9 @@ function Todo() {
           />
         )}
       </Right>
+      <Modal ref={addModal} title="Create Todo">
+        xxx
+      </Modal>
     </Page>
   );
 }
