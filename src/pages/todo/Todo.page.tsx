@@ -30,12 +30,12 @@ function Todo() {
   }
 
   return (
-    <Page title="TODO">
+    <Page title="Todo Application">
       <Actions>
-        <Button text="Add" variant="primary" onClick={handleAdd} />
+        <Button text="Create" variant="primary" onClick={handleAdd} />
       </Actions>
       <List data={data} onSelect={handleSelect} />
-      <Right title={selectItem?.key || "View Detail"} ref={right}>
+      <Right title={selectItem?.key || "View"} ref={right}>
         {selectItem && (
           <Detail
             title={selectItem.title}
@@ -43,7 +43,7 @@ function Todo() {
           />
         )}
       </Right>
-      <Modal ref={addModal} title="Create Todo">
+      <Modal ref={addModal} title="Create">
         xxx
       </Modal>
     </Page>
