@@ -1,0 +1,17 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 32px;
+  margin: 0 0 16px 0;
+  padding: 8px 0;
+}
+
+.label {
+  width: 120px;
+}
+
+.value {
+  width: 100%;
+  min-height: 100%;;
+}

@@ -3,8 +3,6 @@ import { useRef, useImperativeHandle } from "react";
 import { matchElement } from "../../../utils/matchElement";
 import type { FormProps } from "../form";
 
-import styles from "./Form.module.scss";
-
 function Form({
   ref,
   children,
@@ -34,7 +32,7 @@ function Form({
     }
   });
 
-  return <form className={styles.form} ref={formRef}>{item}</form>;
+  return <form ref={formRef}>{item}</form>;
 }
 
 Form.displayName = "Form";
