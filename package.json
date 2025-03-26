@@ -27,10 +27,5 @@
     "@types/react-dom": "19.0.4",
     "@wisdesign/wis-plugin": "0.0.8",
     "typescript": "5.7.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "@wisdesign/wis-plugin": "link:../wis-cli/packages/wis-plugin"
-    }
   }
 }
