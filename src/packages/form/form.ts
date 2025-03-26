@@ -16,7 +16,7 @@ export interface ItemProps {
 
   name: string;
 
-  placeholder: string;
+  placeholder?: string;
 
   node?: "input" | "textarea";
 }
