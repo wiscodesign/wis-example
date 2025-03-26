@@ -23,6 +23,12 @@ importers:
       react-dom:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
+      react-fastclick:
+        specifier: 3.0.2
+        version: 3.0.2(react@19.0.0)
+      touch-action:
+        specifier: ^1.0.1
+        version: 1.0.1
       wiscore:
         specifier: 0.0.4
         version: 0.0.4(@rsbuild/core@1.2.8)(@rspack/core@1.2.3(@swc/helpers@0.5.15))(@swc/core@1.11.13(@swc/helpers@0.5.15))(@swc/types@0.1.20)(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
@@ -3053,6 +3059,11 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
+  react-fastclick@3.0.2:
+    resolution: {integrity: sha512-ia0v5WamwSHmGsWaeKVvR79ubjpa5gIxm+ZFqzSbKrZrUfF4t3PF1+cvQzfbSe51muO7VwUHLBW4uu+oGIwEow==}
+    peerDependencies:
+      react: '*'
+
   react-refresh@0.16.0:
     resolution: {integrity: sha512-FPvF2XxTSikpJxcr+bHut2H4gJ17+18Uy20D5/F+SKzFap62R3cM5wH6b8WN3LyGSYeQilLEcJcR1fjBSI2S1A==}
     engines: {node: '>=0.10.0'}
@@ -3638,6 +3649,9 @@ packages:
   toidentifier@1.0.1:
     resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
     engines: {node: '>=0.6'}
+
+  touch-action@1.0.1:
+    resolution: {integrity: sha512-qsIyuqYBBKUewTxcib0nacyvdpdYyf8zXcABatR0EsaY6Ob4yP/xGoeXlA1PlnMj6CYjY92hPE7zsQE7cXhJ8Q==}
 
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
@@ -7211,6 +7225,10 @@ snapshots:
       react: 19.0.0
       scheduler: 0.25.0
 
+  react-fastclick@3.0.2(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+
   react-refresh@0.16.0: {}
 
   react-remove-scroll-bar@2.3.8(@types/react@19.0.10)(react@19.0.0):
@@ -7810,6 +7828,8 @@ snapshots:
       is-number: 7.0.0
 
   toidentifier@1.0.1: {}
+
+  touch-action@1.0.1: {}
 
   tr46@0.0.3: {}
 
