@@ -4,7 +4,7 @@ const config: WisConfig = {
   name: "example",
 
   remotes: {
-    wis: "https://wis.design"
+    wis: "https://static.wis.design"
   },
 
   exposes: {
