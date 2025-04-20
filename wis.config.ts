@@ -3,6 +3,10 @@ import type { WisConfig } from "@wisdesign/wis-plugin";
 const config: WisConfig = {
   name: "example",
 
+  remotes: {
+    wis: "https://wis.design"
+  },
+
   exposes: {
     "./page": {
       "pc": "./src/packages/page/pc/index",

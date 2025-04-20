@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouterChange, Outlet } from "wiscore/router";
 
 import LIndex from "./lIndex";
@@ -39,7 +39,9 @@ export function Layout() {
   if (!Layout) {
     return (
       <ErrorBoundary>
-        <Outlet />
+        <Suspense fallback={<div>loading</div>}>
+          <Outlet />
+        </Suspense>
       </ErrorBoundary>
     );
   }
@@ -47,7 +49,9 @@ export function Layout() {
   return (
     <Layout>
       <ErrorBoundary>
-        <Outlet />
+        <Suspense fallback={<div>loading</div>}>
+          <Outlet />
+        </Suspense>
       </ErrorBoundary>
     </Layout>
   );
