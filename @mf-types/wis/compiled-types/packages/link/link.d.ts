@@ -25,4 +25,6 @@ export interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>,
      */
     onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
 }
+export interface ExternalLinkProps extends LinkProps {
+}
 export declare function isFullLink(link: string): boolean;

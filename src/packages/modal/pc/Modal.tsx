@@ -1,9 +1,10 @@
-import { useImperativeHandle, useState } from "react";
+import { useImperativeHandle, useState, forwardRef } from "react";
+import type { Ref } from "react";
 import * as RDXDialog from "@radix-ui/react-dialog";
 import { CloseSmallIcon } from "@wisdesign/lsicon";
 import { Button } from "example/button";
 
-import type { ModalProps } from "../modal";
+import type { ModalProps, ModalRef } from "../modal";
 
 import styles from "./Modal.module.scss";
 
@@ -15,8 +16,7 @@ function Modal({
   closeable = true,
   onCancel = () => {},
   onConfirm = () => {},
-  ref,
-}: ModalProps) {
+}: ModalProps, ref: Ref<ModalRef>) {
   const [open, setOpen] = useState(false);
 
   useImperativeHandle(ref, () => {
@@ -78,4 +78,4 @@ function Modal({
   );
 }
 
-export default Modal;
+export default forwardRef(Modal);

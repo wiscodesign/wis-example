@@ -1,5 +1,5 @@
 import type { ResponsiveSize, Size } from "wis/grid";
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 export interface ModuleProps extends HTMLAttributes<HTMLDivElement> {
     /**
      * The title text will show in the module header.
@@ -9,6 +9,10 @@ export interface ModuleProps extends HTMLAttributes<HTMLDivElement> {
      * The description text will show in the module header.
      */
     description?: string;
+    /**
+     * The toggle tip
+     */
+    toggleTip?: ReactNode;
     /**
      * The visual variant to apply to module.
      */

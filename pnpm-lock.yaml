@@ -49,8 +49,8 @@ importers:
         specifier: 18.2.25
         version: 18.2.25
       '@wisdesign/wis-plugin':
-        specifier: 0.0.10
-        version: 0.0.10(@rsbuild/core@1.2.8)(@rspack/core@1.2.3(@swc/helpers@0.5.17))(@swc/core@1.11.21(@swc/helpers@0.5.17))(@swc/types@0.1.21)(postcss@8.5.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3)
+        specifier: 0.0.11
+        version: 0.0.11(@rsbuild/core@1.2.8)(@rspack/core@1.2.3(@swc/helpers@0.5.17))(@swc/core@1.11.21(@swc/helpers@0.5.17))(@swc/types@0.1.21)(postcss@8.5.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -1479,8 +1479,8 @@ packages:
       '@rsbuild/core':
         optional: true
 
-  '@wisdesign/wis-plugin@0.0.10':
-    resolution: {integrity: sha512-8TdFAkQ1DY0K49mmO50c2sL4qlAN1hE4XfGP/Tq8mLUB7aXW51fcFi3OJ8Pd63yRzFJhCLpmugXj6fTkkhpGCA==}
+  '@wisdesign/wis-plugin@0.0.11':
+    resolution: {integrity: sha512-7O2f1ax55Jgnz8yy14WubHPUQNAFKb4GefvPJfPs99WI/dE5aJEW2cGX+fPiNENMvjaa3kGXkaeRx8u5Zj7P0A==}
     peerDependencies:
       '@rsbuild/core': '>=1'
     peerDependenciesMeta:
@@ -5579,7 +5579,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@wisdesign/wis-plugin@0.0.10(@rsbuild/core@1.2.8)(@rspack/core@1.2.3(@swc/helpers@0.5.17))(@swc/core@1.11.21(@swc/helpers@0.5.17))(@swc/types@0.1.21)(postcss@8.5.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3)':
+  '@wisdesign/wis-plugin@0.0.11(@rsbuild/core@1.2.8)(@rspack/core@1.2.3(@swc/helpers@0.5.17))(@swc/core@1.11.21(@swc/helpers@0.5.17))(@swc/types@0.1.21)(postcss@8.5.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3)':
     dependencies:
       '@wisdesign/context': 0.0.1(@swc/core@1.11.21(@swc/helpers@0.5.17))(@swc/types@0.1.21)(typescript@5.7.3)
       '@wisdesign/cross-plugin': 0.0.4(@rsbuild/core@1.2.8)(@rspack/core@1.2.3(@swc/helpers@0.5.17))(@swc/core@1.11.21(@swc/helpers@0.5.17))(@swc/types@0.1.21)(postcss@8.5.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3)

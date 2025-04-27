@@ -49,7 +49,9 @@ declare const _default: {
         };
     };
     ActionsGroup: {
-        tags: {};
+        tags: {
+            package: string;
+        };
         filePath: string;
         description: string;
         displayName: string;
@@ -402,6 +404,23 @@ declare const _default: {
                 };
             };
             description: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            toggleTip: {
                 defaultValue: null;
                 description: string;
                 name: string;
@@ -2271,6 +2290,23 @@ declare const _default: {
                     name: string;
                 };
             };
+            toggleTip: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
             gutter: {
                 defaultValue: null;
                 description: string;
@@ -2350,6 +2386,23 @@ declare const _default: {
                     name: string;
                 };
             };
+            toggleTip: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
         };
     };
     Right: {
@@ -2395,6 +2448,23 @@ declare const _default: {
                     name: string;
                 };
             };
+            toggleTip: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
         };
     };
     Top: {
@@ -2405,42 +2475,7 @@ declare const _default: {
         description: string;
         displayName: string;
         methods: never[];
-        props: {
-            title: {
-                defaultValue: null;
-                description: string;
-                name: string;
-                parent: {
-                    fileName: string;
-                    name: string;
-                };
-                declarations: {
-                    fileName: string;
-                    name: string;
-                }[];
-                required: boolean;
-                type: {
-                    name: string;
-                };
-            };
-            description: {
-                defaultValue: null;
-                description: string;
-                name: string;
-                parent: {
-                    fileName: string;
-                    name: string;
-                };
-                declarations: {
-                    fileName: string;
-                    name: string;
-                }[];
-                required: boolean;
-                type: {
-                    name: string;
-                };
-            };
-        };
+        props: {};
     };
     Bottom: {
         tags: {
@@ -2485,6 +2520,252 @@ declare const _default: {
                     name: string;
                 };
             };
+            toggleTip: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+        };
+    };
+    Link: {
+        tags: {};
+        filePath: string;
+        description: string;
+        displayName: string;
+        methods: never[];
+        props: {
+            inverse: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            disabled: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            text: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            href: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            redirect: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            onClick: {
+                defaultValue: {
+                    value: string;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+        };
+    };
+    ExternalLink: {
+        tags: {
+            package: string;
+            name: string;
+        };
+        filePath: string;
+        description: string;
+        displayName: string;
+        methods: never[];
+        props: {
+            inverse: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            disabled: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            text: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            href: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            redirect: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            onClick: {
+                defaultValue: {
+                    value: string;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
         };
     };
     Meta: {
@@ -2496,7 +2777,9 @@ declare const _default: {
         props: {};
     };
     MetaItem: {
-        tags: {};
+        tags: {
+            package: string;
+        };
         filePath: string;
         description: string;
         displayName: string;
@@ -2580,6 +2863,23 @@ declare const _default: {
                 };
             };
             description: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            toggleTip: {
                 defaultValue: null;
                 description: string;
                 name: string;
@@ -2731,6 +3031,23 @@ declare const _default: {
                 };
             };
             description: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            toggleTip: {
                 defaultValue: null;
                 description: string;
                 name: string;
@@ -3387,6 +3704,135 @@ declare const _default: {
                 };
             };
         };
+    };
+    ToggleTip: {
+        tags: {};
+        filePath: string;
+        description: string;
+        displayName: string;
+        methods: never[];
+        props: {
+            side: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                    raw: string;
+                    value: {
+                        value: string;
+                    }[];
+                };
+            };
+            align: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                    raw: string;
+                    value: {
+                        value: string;
+                    }[];
+                };
+            };
+            text: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            open: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            defaultOpen: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            onOpen: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+        };
+    };
+    ToggleTipActions: {
+        tags: {
+            package: string;
+        };
+        filePath: string;
+        description: string;
+        displayName: string;
+        methods: never[];
+        props: {};
     };
     Tooltip: {
         tags: {};

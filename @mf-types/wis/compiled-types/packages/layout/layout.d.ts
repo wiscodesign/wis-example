@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     /**
      * The title text will show in the layout header.
@@ -8,6 +8,10 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
      * The description text will show in the layout header.
      */
     description?: string;
+    /**
+     * The toggle tip
+     */
+    toggleTip?: ReactNode;
     /**
      * Controls whether the layout has margins in responsive mode.
      * @private
@@ -25,15 +29,7 @@ export interface LeftProps extends Omit<LayoutProps, "gutter" | "responsive"> {
 }
 export interface RightProps extends Omit<LayoutProps, "gutter" | "responsive"> {
 }
-export interface TopProps extends Omit<LayoutProps, "title" | "description" | "gutter" | "responsive"> {
-    /**
-     * @ignore
-     */
-    title?: string;
-    /**
-     * @ignore
-     */
-    description?: string;
+export interface TopProps extends Omit<LayoutProps, "title" | "description" | "toggleTip" | "gutter" | "responsive"> {
 }
 export interface BottomProps extends Omit<LayoutProps, "gutter" | "responsive"> {
 }

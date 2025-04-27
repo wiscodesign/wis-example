@@ -38,6 +38,10 @@ export interface BoxHeaderProps extends HTMLAttributes<HTMLDivElement> {
      * The description text to display.
      */
     description?: string;
+    /**
+     * The toggle tip
+     */
+    toggleTip?: ReactNode;
 }
 export interface BoxPanelProps extends HTMLAttributes<HTMLDivElement> {
 }
