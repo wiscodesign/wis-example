@@ -1,6 +1,3 @@
 import type { BoxProps } from "../box";
-declare function Box({ className, children, ...rest }: BoxProps): import("react/jsx-runtime").JSX.Element;
-declare namespace Box {
-    var displayName: string;
-}
+declare const Box: import("react").ForwardRefExoticComponent<BoxProps & import("react").RefAttributes<HTMLDivElement>>;
 export default Box;

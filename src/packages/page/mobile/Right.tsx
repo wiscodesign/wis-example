@@ -1,9 +1,9 @@
-import { useImperativeHandle, useRef } from "react";
+import { useImperativeHandle, useRef, type Ref, forwardRef } from "react";
 import { Modal, type ModalRef } from "example/modal"
 
-import type { RightProps } from "../page"
+import type { RightProps, RightRef } from "../page"
 
-function Right({ title, children, ref }: RightProps) {
+const Right = forwardRef(function Right({ title, children }: RightProps, ref: Ref<RightRef>) {
   const modalRef = useRef<ModalRef>(null);
 
   useImperativeHandle(ref, () => {
@@ -22,7 +22,7 @@ function Right({ title, children, ref }: RightProps) {
       {children}
     </Modal>
   )
-}
+});
 
 Right.displayName = "Right";
 

@@ -1295,6 +1295,227 @@ declare const _default: {
         methods: never[];
         props: {};
     };
+    Context: {
+        tags: {
+            see: string;
+            example: string;
+        };
+        filePath: string;
+        description: string;
+        displayName: string;
+        methods: never[];
+        props: {};
+    };
+    Drawer: {
+        tags: {};
+        filePath: string;
+        description: string;
+        displayName: string;
+        methods: never[];
+        props: {
+            open: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            defaultOpen: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            title: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            description: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            toggleTip: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            side: {
+                defaultValue: {
+                    value: string;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                    raw: string;
+                    value: {
+                        value: string;
+                    }[];
+                };
+            };
+            closeable: {
+                defaultValue: {
+                    value: boolean;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            maskCloseable: {
+                defaultValue: {
+                    value: boolean;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            modal: {
+                defaultValue: {
+                    value: boolean;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            size: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            onOpen: {
+                defaultValue: {
+                    value: string;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+        };
+    };
     Dropdown: {
         tags: {};
         filePath: string;
@@ -2821,6 +3042,229 @@ declare const _default: {
             };
             text: {
                 defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+        };
+    };
+    Modal: {
+        tags: {};
+        filePath: string;
+        description: string;
+        displayName: string;
+        methods: never[];
+        props: {
+            open: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            defaultOpen: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            title: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            description: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            toggleTip: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            closeable: {
+                defaultValue: {
+                    value: boolean;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            maskCloseable: {
+                defaultValue: {
+                    value: boolean;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            modal: {
+                defaultValue: {
+                    value: boolean;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            center: {
+                defaultValue: {
+                    value: boolean;
+                };
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            width: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            height: {
+                defaultValue: null;
+                description: string;
+                name: string;
+                parent: {
+                    fileName: string;
+                    name: string;
+                };
+                declarations: {
+                    fileName: string;
+                    name: string;
+                }[];
+                required: boolean;
+                type: {
+                    name: string;
+                };
+            };
+            onOpen: {
+                defaultValue: {
+                    value: string;
+                };
                 description: string;
                 name: string;
                 parent: {

@@ -1,6 +1,3 @@
-import type { ToggleTipProps } from "../toggleTip";
-declare function ToggleTip(props: ToggleTipProps): import("react/jsx-runtime").JSX.Element;
-declare namespace ToggleTip {
-    var displayName: string;
-}
+import type { ToggleTipProps, ToggleTipRef } from "../toggleTip";
+declare const ToggleTip: import("react").ForwardRefExoticComponent<ToggleTipProps & import("react").RefAttributes<ToggleTipRef>>;
 export default ToggleTip;

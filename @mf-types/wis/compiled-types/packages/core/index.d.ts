@@ -2,4 +2,5 @@ import "wis/gray";
 import "wis/theme";
 import "./wis.css";
 import { getSymbioteElement, isElement, matchElement } from "./matchElement";
-export { isElement, matchElement, getSymbioteElement };
+import MountElementContext, { useGetMountElement, useSetMountElement } from "./mountElementContext";
+export { isElement, matchElement, getSymbioteElement, MountElementContext, useGetMountElement, useSetMountElement, };

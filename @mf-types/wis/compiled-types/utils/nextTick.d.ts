@@ -1,1 +1,1 @@
-export default function nextTick(fn: () => void): void;
+export default function nextTick(fn: () => void, macro?: boolean): void;

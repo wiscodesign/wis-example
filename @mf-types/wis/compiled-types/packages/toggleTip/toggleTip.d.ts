@@ -25,5 +25,9 @@ export interface ToggleTipProps extends HTMLAttributes<HTMLDivElement> {
      */
     onOpen?: (open: boolean) => void;
 }
+export interface ToggleTipRef {
+    show(): void;
+    hide(): void;
+}
 export interface ToggleTipActionsProps extends HTMLAttributes<HTMLDivElement> {
 }

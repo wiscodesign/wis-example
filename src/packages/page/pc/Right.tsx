@@ -1,10 +1,10 @@
-import { useImperativeHandle, useState } from "react";
+import { type Ref, useImperativeHandle, useState, forwardRef } from "react";
 
-import type { RightProps } from "../page"
+import type { RightProps, RightRef } from "../page"
 
 import styles from "./Right.module.scss";
 
-function Right({ children, ref }: RightProps) {
+const Right = forwardRef(function Right({ children }: RightProps, ref: Ref<RightRef>) {
   const [visible, setVisible] = useState(false);
 
   useImperativeHandle(ref, () => {
@@ -23,7 +23,7 @@ function Right({ children, ref }: RightProps) {
   }
 
   return <div className={styles.right}>{children}</div>
-}
+});
 
 Right.displayName = "Right";
 
