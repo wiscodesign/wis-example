@@ -1,11 +1,11 @@
-
 export interface Item {
   key: string;
   title: string;
-  description: string;
+  description?: string;
+  project: string;
+  createTime: number;
 }
-export interface ListProps {
-  data: Item[];
 
-  onSelect: (item: Item) => void;
+export interface ListProps {
+  items?: Item[];
 }

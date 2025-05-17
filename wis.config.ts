@@ -24,18 +24,14 @@ const config: WisConfig = {
       "pc": "./src/packages/list/pc/index",
       "mobile": "./src/packages/list//mobile/index",
     },
-    "./detail": {
-      "pc": "./src/packages/detail/pc/index",
-      "mobile": "./src/packages/detail/mobile/index",
-    },
     "./modal": {
       "pc": "./src/packages/modal/pc/index",
       "mobile": "./src/packages/modal/mobile/index",
     },
-    "./form": {
-      "pc": "./src/packages/form/pc/index",
-      "mobile": "./src/packages/form/mobile/index",
-    },
+    // "./form": {
+    //   "pc": "./src/packages/form/pc/index",
+    //   "mobile": "./src/packages/form/mobile/index",
+    // },
   },
 };
 

@@ -1,36 +1,138 @@
 .list {
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  padding: 0 24px 24px 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  padding: 0 24px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+
+  &[data-disabled="true"] {
+    .title,
+    .description,
+    .item {
+      opacity: 0.3;
+    }
+  }
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: #e5e5e5;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+  flex: 0 0 auto;
+  cursor: pointer;
+
+  &::before {
+    display: inline-block;
+    content: '';
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: white;
+    border-radius: 2px;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
+  }
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  background: #444CE7;
+  border-radius: 4px;
+  color: white;
+  stroke-width: 2px;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex: 1 1 auto;
+  width: 0;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
-  padding: 24px;
-  box-sizing: border-box;
+  flex: 0 0 auto;
+  margin: 0 0 0 16px;
 }
 
 .item {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: none;
-  background: white;
-  border: 1px solid #ebebeb;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.no {
+  font-size: 14px;
+  color: #6e6e6e;
+  flex: 0 0 auto;
 }
 
 .title {
-  font-weight: 700;
-  font-size: 20px;
-  margin: 0 0 16px 0;
-}
-
-.content {
-  text-align: initial;
+  color: #171717;
   font-size: 16px;
-  font-weight: 400;
-  white-space: nowrap;
+  font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
+  word-break: break-word;
+  white-space: nowrap;
+}
+
+.description {
+  color: #525252;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap;
+}
+
+.label {
+  color: #737373;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.value {
+  font-size: 12px;
+  color: #171717;
 }

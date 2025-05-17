@@ -31,7 +31,7 @@
       background-color: #3538cd;
       border-color: transparent;
     }
-  
+
     &:focus {
       color: #fff;
       background-color: #3538cd;
@@ -50,18 +50,32 @@
       background-color: #ebebeb;
       border-color: #d4d4d4;
     }
-  
+
     &:hover {
       color: #171717;
       background-color: #fff;
       border-color: #d4d4d4;
     }
-  
+
     &:focus {
       color: #171717;
       background-color: #fff;
       border-color: #ebebeb;
       box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
     }
+  }
+
+  &[data-size="md"] {
+    gap: 0 4px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 8px;
+  }
+
+  &[data-size="sm"] {
+    gap: 0 4px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 8px;
   }
 }

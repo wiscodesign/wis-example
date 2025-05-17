@@ -66,4 +66,18 @@
       box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
     }
   }
+
+  &[data-size="md"] {
+    gap: 0 4px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 8px;
+  }
+
+  &[data-size="sm"] {
+    gap: 0 4px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 8px;
+  }
 }

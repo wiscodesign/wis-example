@@ -1,9 +1,13 @@
-import type { MouseEvent } from "react";
+import type { ReactNode, MouseEvent } from 'react';
 
 export interface ButtonProps {
   text: string;
 
-  variant?: "primary" | "secondary";
+  size?: 'sm' | 'md';
+
+  icon?: ReactNode;
+
+  variant?: 'primary' | 'secondary';
 
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }

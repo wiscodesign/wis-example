@@ -1,80 +1,57 @@
-import { useImperativeHandle, useState, forwardRef } from "react";
-import type { Ref } from "react";
-import * as RDXDialog from "@radix-ui/react-dialog";
-import { CloseSmallIcon } from "@wisdesign/lsicon";
-import { Button } from "example/button";
+import { useImperativeHandle, useState, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { Dialog } from 'radix-ui';
+import { CloseSmallIcon } from '@wisdesign/lsicon';
+import { matchElement } from 'wis/core';
 
-import type { ModalProps, ModalRef } from "../modal";
+import type { ModalProps, ModalRef } from '../modal';
 
-import styles from "./Modal.module.scss";
+import styles from './Modal.module.scss';
 
-function Modal({
-  title,
-  children,
-  cancel = true,
-  confirm = true,
-  closeable = true,
-  onCancel = () => {},
-  onConfirm = () => {},
-}: ModalProps, ref: Ref<ModalRef>) {
+function Modal(
+  { title, children, onOpen = () => {} }: ModalProps,
+  ref: Ref<ModalRef>,
+) {
   const [open, setOpen] = useState(false);
+  const {
+    elements: { Actions: actions },
+    unmatched,
+  } = matchElement(children, [{ type: 'Actions', maxCount: 1 }]);
 
   useImperativeHandle(ref, () => {
     return {
-      open() {
+      show() {
         setOpen(true);
       },
-      close() {
+      hide() {
         setOpen(false);
       },
     };
   });
 
-  function handleCancel() {
-    setOpen(false);
-    onCancel();
+  function handleOpenChange(value: boolean) {
+    setOpen(value);
+    onOpen(value);
   }
-
-  function handleConfirm() {
-    onConfirm();
-  }
-
-  function handleOpenChange(changedOpen: boolean) {
-    setOpen(changedOpen)
-  }
-
-  const isShowFooter = cancel || confirm;
 
   return (
-    <RDXDialog.Root open={open} onOpenChange={handleOpenChange}>
-      <RDXDialog.Portal>
-        <RDXDialog.Overlay className={styles.overlay} />
-        <RDXDialog.Content className={styles.content}>
+    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
+      <Dialog.Portal>
+        <Dialog.Overlay className={styles.overlay} />
+        <Dialog.Content className={styles.modal}>
           <div className={styles.header}>
-            <div className={styles.info}>
-              <RDXDialog.Title className={styles.title}>
-                {title}
-              </RDXDialog.Title>
-              <RDXDialog.Description className={styles.description}>
-                {title}
-              </RDXDialog.Description>
-            </div>
-            {closeable && (
-              <RDXDialog.Close className={styles.close}>
-                <CloseSmallIcon />
-              </RDXDialog.Close>
-            )}
+            <Dialog.Title className={styles.title}>{title}</Dialog.Title>
+            <Dialog.Close className={styles.close}>
+              <CloseSmallIcon />
+            </Dialog.Close>
           </div>
-          <div className={styles.container}>{children}</div>
-          {isShowFooter && (
-            <div className={styles.footer}>
-              {cancel && <Button text="Cancel" onClick={handleCancel} />}
-              {confirm && <Button text="Confirm" variant="primary" onClick={handleConfirm} />}
-            </div>
-          )}
-        </RDXDialog.Content>
-      </RDXDialog.Portal>
-    </RDXDialog.Root>
+          <div className={styles.content}>{unmatched}</div>
+          <div className={styles.footer}>
+            {actions[0]}
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
 
