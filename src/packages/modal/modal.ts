@@ -7,6 +7,8 @@ export interface ModalRef {
 
 export interface ModalProps {
   title: string;
+  width?: number;
+  height?: number;
   children: ReactNode;
   onOpen?: (open: boolean) => void;
 }

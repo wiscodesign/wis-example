@@ -5,6 +5,7 @@ import { Actions } from 'example/actions';
 import { Button } from 'example/button';
 import { List, type Item } from 'example/list';
 import { Modal, type ModalRef } from 'example/modal';
+import { Form, FormItem, type FormRef } from 'example/form';
 
 let count = 0;
 function createKey() {
@@ -36,6 +37,9 @@ export default function Index() {
     },
   ]);
   const modalRef = useRef<ModalRef>(null);
+  const formRef = useRef<FormRef>(null);
+
+  function handleCreate() {}
 
   return (
     <Page title="Todo List">
@@ -49,9 +53,10 @@ export default function Index() {
           }}
         />
       </Actions>
+
       <List items={data} />
-      <Modal ref={modalRef} title="Create">
-        xxx
+
+      <Modal ref={modalRef} title="Create" width={600} height={424}>
         <Actions>
           <Button
             text="Cancel"
@@ -59,8 +64,26 @@ export default function Index() {
               modalRef.current?.hide();
             }}
           />
-          <Button text="Confirm" variant="primary" />
+          <Button
+            text="Confirm"
+            variant="primary"
+            onClick={() => {
+              formRef.current?.submit();
+            }}
+          />
         </Actions>
+
+        <Form ref={formRef} onSubmit={handleCreate}>
+          <FormItem label="Title" name="title">
+            xxx
+          </FormItem>
+          <FormItem label="Description" name="description">
+            xxx
+          </FormItem>
+          <FormItem label="Project" name="project">
+            xxx
+          </FormItem>
+        </Form>
       </Modal>
     </Page>
   );

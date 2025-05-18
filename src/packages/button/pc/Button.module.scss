@@ -48,7 +48,7 @@
     &:active {
       color: #fff;
       background-color: #ebebeb;
-      border-color: #d4d4d4;
+      border-color: transparent;
     }
 
     &:hover {
@@ -65,11 +65,41 @@
     }
   }
 
+  &[data-variant="ghost"] {
+    color: #171717;
+    background-color: #fff;
+    border-color: transparent;
+
+    &:active {
+      color: #fff;
+      background-color: #ebebeb;
+      border-color: transparent;
+    }
+
+    &:hover {
+      color: #171717;
+      background-color: #fff;
+      border-color: transparent;
+    }
+
+    &:focus {
+      color: #171717;
+      background-color: #fff;
+      border-color: transparent;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
+    }
+  }
+
   &[data-size="md"] {
     gap: 0 4px;
     height: 40px;
     padding: 0 16px;
     border-radius: 8px;
+
+    &[data-icon="true"] {
+      width: 40px;
+      padding: 0;
+    }
   }
 
   &[data-size="sm"] {
@@ -77,5 +107,22 @@
     height: 32px;
     padding: 0 12px;
     border-radius: 8px;
+
+    &[data-icon="true"] {
+      width: 32px;
+      padding: 0;
+    }
+  }
+
+  &[data-size="xs"] {
+    gap: 0 4px;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 4px;
+
+    &[data-icon="true"] {
+      width: 24px;
+      padding: 0;
+    }
   }
 }

@@ -1,15 +1,16 @@
-import { useImperativeHandle, useState, forwardRef } from 'react';
+import { useImperativeHandle, useState, forwardRef, cloneElement } from 'react';
 import type { Ref } from 'react';
-import { Dialog } from 'radix-ui';
+import { Dialog, VisuallyHidden } from 'radix-ui';
 import { CloseSmallIcon } from '@wisdesign/lsicon';
 import { matchElement } from 'wis/core';
+import { Button } from 'example/button';
 
 import type { ModalProps, ModalRef } from '../modal';
 
 import styles from './Modal.module.scss';
 
 function Modal(
-  { title, children, onOpen = () => {} }: ModalProps,
+  { title, width, height, children, onOpen = () => {} }: ModalProps,
   ref: Ref<ModalRef>,
 ) {
   const [open, setOpen] = useState(false);
@@ -38,17 +39,25 @@ function Modal(
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
-        <Dialog.Content className={styles.modal}>
+        <Dialog.Content
+          className={styles.modal}
+          style={{ width: `${width}px`, height: `${height}px` }}
+        >
+          <VisuallyHidden.Root>
+            <Dialog.Description>{title}</Dialog.Description>
+          </VisuallyHidden.Root>
           <div className={styles.header}>
             <Dialog.Title className={styles.title}>{title}</Dialog.Title>
-            <Dialog.Close className={styles.close}>
-              <CloseSmallIcon />
+            <Dialog.Close className={styles.close} asChild>
+              <Button icon={<CloseSmallIcon />} size="xs" variant="ghost" />
             </Dialog.Close>
           </div>
           <div className={styles.content}>{unmatched}</div>
-          <div className={styles.footer}>
-            {actions[0]}
-          </div>
+          {actions && (
+            <div className={styles.footer}>
+              {actions ? cloneElement(actions[0], { size: 'sm' }) : null}
+            </div>
+          )}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
