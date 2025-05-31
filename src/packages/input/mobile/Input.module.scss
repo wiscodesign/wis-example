@@ -1,0 +1,21 @@
+.input {
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+  outline: none;
+  border: none;
+  text-align: right;
+  border-radius: 2px;
+  transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+  box-sizing: border-box;
+
+  &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    color: #a3a3a3;
+  }
+}

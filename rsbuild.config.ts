@@ -5,7 +5,7 @@ import { pluginWis } from "@wisdesign/wis-plugin/rsbuild";
 
 export default defineConfig({
   server: {
-    port: 5000,
+    port: 8000,
   },
 
   plugins: [pluginReact(), pluginSass(), pluginWis()],

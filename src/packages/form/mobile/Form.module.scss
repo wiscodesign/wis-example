@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e5e5;
+  gap: 0 24px;
+}
+
+.label {
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #262626;
+  font-weight: 500;
+  flex: 0 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.control {
+  flex: 1 1 auto;
+  text-align: right;
+}
