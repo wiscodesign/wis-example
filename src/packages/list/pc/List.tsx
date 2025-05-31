@@ -57,4 +57,6 @@ function List({ items = [] }: ListProps) {
   );
 }
 
+List.displayName = "List";
+
 export default List;

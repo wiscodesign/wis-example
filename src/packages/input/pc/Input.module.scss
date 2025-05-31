@@ -1,0 +1,24 @@
+.input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 16px;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
+  background: white;
+  transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+  box-sizing: border-box;
+
+  &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    color: #a3a3a3;
+  }
+}

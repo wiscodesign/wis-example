@@ -6,10 +6,17 @@ import { Button } from 'example/button';
 import { List, type Item } from 'example/list';
 import { Modal, type ModalRef } from 'example/modal';
 import { Form, FormItem, type FormRef } from 'example/form';
+import { Input } from 'example/input';
 
 let count = 0;
 function createKey() {
   return `TODO_${Date.now()}_${count++}`;
+}
+
+interface Create {
+  name?: string;
+  description?: string;
+  project: string;
 }
 
 export default function Index() {
@@ -39,7 +46,9 @@ export default function Index() {
   const modalRef = useRef<ModalRef>(null);
   const formRef = useRef<FormRef>(null);
 
-  function handleCreate() {}
+  function handleCreate(data: Create) {
+    console.log(data)
+  }
 
   return (
     <Page title="Todo List">
@@ -73,12 +82,12 @@ export default function Index() {
           />
         </Actions>
 
-        <Form ref={formRef} onSubmit={handleCreate}>
+        <Form<Create> ref={formRef} onSubmit={handleCreate}>
           <FormItem label="Title" name="title">
-            xxx
+            <Input placeholder="Please input..." />
           </FormItem>
           <FormItem label="Description" name="description">
-            xxx
+            <Input placeholder="Please input..." />
           </FormItem>
           <FormItem label="Project" name="project">
             xxx

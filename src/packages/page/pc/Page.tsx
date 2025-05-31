@@ -24,4 +24,6 @@ function Page({ title, children }: PageProps) {
   );
 }
 
+Page.displayName = "Page";
+
 export default Page;

@@ -32,6 +32,10 @@ const config: WisConfig = {
       "pc": "./src/packages/form/pc/index",
       "mobile": "./src/packages/form/mobile/index",
     },
+    "./input": {
+      "pc": "./src/packages/input/pc/index",
+      "mobile": "./src/packages/input/mobile/index",
+    },
   },
 };
 

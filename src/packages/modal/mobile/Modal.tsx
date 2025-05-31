@@ -61,4 +61,6 @@ function Modal(
   );
 }
 
+Modal.displayName = 'Modal';
+
 export default forwardRef(Modal);
