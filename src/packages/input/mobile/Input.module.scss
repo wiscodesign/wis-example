@@ -8,10 +8,7 @@
   border-radius: 2px;
   transition: box-shadow 0.2s, background 0.2s, border 0.2s;
   box-sizing: border-box;
-
-  &:focus {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
-  }
+  font-size: 14px;
 
   &::placeholder {
     font-size: 14px;

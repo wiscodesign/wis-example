@@ -17,7 +17,7 @@ function Item({ label, name, children }: ItemProps) {
           }
 
           // @ts-ignore
-          return cloneElement(child, { id: name, name });
+          return cloneElement(child, { label, name });
         })}
       </div>
     </div>
