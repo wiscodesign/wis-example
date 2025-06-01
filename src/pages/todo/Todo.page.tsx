@@ -1,91 +1,128 @@
-import { useRef, useState } from "react";
-import { Page, Right } from "example/page";
-import type { RightRef } from "example/page";
-import { Actions } from "example/actions";
-import { Button } from "example/button";
-import { List } from "example/list";
-import type { Item as ListItem } from "example/list"
-import { Detail } from "example/detail";
-import { Modal, type ModalRef } from "example/modal";
-import { Form, Item } from "example/form";
-import type { FormRef } from "example/form";
+import { useState, useRef } from 'react';
+import { AddOneIcon } from '@wisdesign/lsicon';
+import { Page } from 'example/page';
+import { Actions } from 'example/actions';
+import { Button } from 'example/button';
+import { List, type Item } from 'example/list';
+import { Modal, type ModalRef } from 'example/modal';
+import { Form, FormItem, type FormRef } from 'example/form';
+import { Input } from 'example/input';
+import { Select } from 'example/select';
 
-interface TodoData {
-  key: string;
-  title: string;
-  description: string;
+let count = 0;
+function createKey() {
+  return `TODO_${Date.now()}_${count++}`;
 }
 
-function Todo() {
-  const right = useRef<RightRef>(null);
-  const addModal = useRef<ModalRef>(null);
-  const form = useRef<FormRef>(null);
-  const [data, setData] = useState<TodoData[]>([
+interface Create {
+  title?: string;
+  description?: string;
+  project: string;
+}
+
+interface Project {
+  label: string;
+  value: string;
+}
+
+export default function Index() {
+  const [data, setData] = useState<Item[]>([
     {
-      key: `UID_${Date.now()}`,
-      title: "Learn Wis Cross Application",
-      description:
-        "Wis is the open-source design system of Wis Design, aimed at providing excellent user experience for B-end products. This system provides runnable code, design tools, and product design guidelines based on an essence-based design language.",
+      key: createKey(),
+      title: 'Shell',
+      description: 'Create the shell component.',
+      project: 'Wis',
+      createTime: Date.now(),
+    },
+    {
+      key: createKey(),
+      title: 'Table',
+      description: 'Create the table component.',
+      project: 'Wis',
+      createTime: Date.now(),
+    },
+    {
+      key: createKey(),
+      title: 'Form',
+      description: 'Create the form component.',
+      project: 'Wis',
+      createTime: Date.now(),
     },
   ]);
-  const [selectItem, setSelectItem] = useState<ListItem>();
+  const [projects] = useState<Project[]>([
+    {
+      label: '@wisdesign/wis',
+      value: 'wis',
+    },
+    {
+      label: '@wisdesign/cli',
+      value: 'cli',
+    },
+  ]);
+  const modalRef = useRef<ModalRef>(null);
+  const formRef = useRef<FormRef>(null);
 
-  function handleSelect(item: ListItem) {
-    setSelectItem(item);
-    right.current?.show();
-  }
+  function handleCreate(formData: Create) {
+    const project = projects.find(item => item.value === formData.project);
 
-  function handleAdd() {
-    addModal.current?.open();
-  }
-
-  function handleConfirm() {
-    form.current?.submit();
-  }
-
-  function handleSubmit(value: Record<string, string>) {
-    if (!value.title && !value.description) {
-      return;
-    }
-
-    const nextData = data.slice();
-    nextData.push({
-      key: `UID_${Date.now()}`,
-      title: value.title,
-      description: value.description,
-    })
-
-    setData(nextData)
-
-    addModal.current?.close();
+    setData(
+      data.concat([
+        {
+          key: createKey(),
+          title: formData.title ?? 'None',
+          description: formData.description ?? 'None',
+          project: project?.label ?? 'None',
+          createTime: Date.now(),
+        },
+      ]),
+    );
   }
 
   return (
-    <Page title="Todo Application">
-
+    <Page title="Todo List">
       <Actions>
-        <Button text="Create" variant="primary" onClick={handleAdd} />
+        <Button
+          text="Create"
+          variant="primary"
+          icon={<AddOneIcon />}
+          onClick={() => {
+            modalRef.current?.show();
+          }}
+        />
       </Actions>
 
-      <List data={data} onSelect={handleSelect} />
+      <List items={data} />
 
-      <Right title={selectItem?.key || "View"} ref={right}>
-        {selectItem && (
-          <Detail
-            title={selectItem.title}
-            description={selectItem.description}
+      <Modal ref={modalRef} title="Create" width={600} height={424}>
+        <Actions>
+          <Button
+            text="Cancel"
+            onClick={() => {
+              modalRef.current?.hide();
+            }}
           />
-        )}
-      </Right>
+          <Button
+            text="Confirm"
+            variant="primary"
+            onClick={() => {
+              formRef.current?.submit();
+              modalRef.current?.hide();
+            }}
+          />
+        </Actions>
 
-      <Modal ref={addModal} title="Create" onConfirm={handleConfirm}>
-        <Form ref={form} onSubmit={handleSubmit}>
-          <Item label="Title" name="title" node="input" />
-          <Item label="Description" name="description" node="textarea" />
+        <Form<Create> ref={formRef} onSubmit={handleCreate}>
+          <FormItem label="Title" name="title">
+            <Input placeholder="Please input..." />
+          </FormItem>
+          <FormItem label="Description" name="description">
+            <Input placeholder="Please input..." />
+          </FormItem>
+          <FormItem label="Project" name="project">
+            <Select data={projects} />
+          </FormItem>
         </Form>
       </Modal>
     </Page>
   );
 }
-
-export default Todo;

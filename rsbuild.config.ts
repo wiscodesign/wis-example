@@ -8,5 +8,10 @@ export default defineConfig({
     port: 8000,
   },
 
+  html: {
+    title: "Wis Example",
+    favicon: "public/favicon.ico",
+  },
+
   plugins: [pluginReact(), pluginSass(), pluginWis()],
 });

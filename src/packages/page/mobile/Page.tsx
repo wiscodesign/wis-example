@@ -15,9 +15,9 @@ function Page({ title, children }: PageProps) {
       <div className={styles.content}>
         {unmatched}
       </div>
-      <div className={styles.footer}>
+      {!!actions && <div className={styles.footer}>
         {actions}
-      </div>
+      </div>}
     </div>
   )
 }
