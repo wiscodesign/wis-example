@@ -1,5 +1,4 @@
-import type { HTMLAttributes } from "react";
-
-export interface InputProps extends HTMLAttributes<HTMLInputElement> {
+export interface InputProps {
   placeholder?: string;
+  name?: string;
 }

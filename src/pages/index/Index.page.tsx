@@ -7,6 +7,7 @@ import { List, type Item } from 'example/list';
 import { Modal, type ModalRef } from 'example/modal';
 import { Form, FormItem, type FormRef } from 'example/form';
 import { Input } from 'example/input';
+import { Select } from 'example/select';
 
 let count = 0;
 function createKey() {
@@ -14,13 +15,18 @@ function createKey() {
 }
 
 interface Create {
-  name?: string;
+  title?: string;
   description?: string;
   project: string;
 }
 
+interface Project {
+  label: string;
+  value: string;
+}
+
 export default function Index() {
-  const [data] = useState<Item[]>([
+  const [data, setData] = useState<Item[]>([
     {
       key: createKey(),
       title: 'Shell',
@@ -43,11 +49,33 @@ export default function Index() {
       createTime: Date.now(),
     },
   ]);
+  const [projects] = useState<Project[]>([
+    {
+      label: '@wisdesign/wis',
+      value: 'wis',
+    },
+    {
+      label: '@wisdesign/cli',
+      value: 'cli',
+    },
+  ]);
   const modalRef = useRef<ModalRef>(null);
   const formRef = useRef<FormRef>(null);
 
-  function handleCreate(data: Create) {
-    console.log(data)
+  function handleCreate(formData: Create) {
+    const project = projects.find(item => item.value === formData.project);
+
+    setData(
+      data.concat([
+        {
+          key: createKey(),
+          title: formData.title ?? 'None',
+          description: formData.description ?? 'None',
+          project: project?.label ?? 'None',
+          createTime: Date.now(),
+        },
+      ]),
+    );
   }
 
   return (
@@ -78,6 +106,7 @@ export default function Index() {
             variant="primary"
             onClick={() => {
               formRef.current?.submit();
+              modalRef.current?.hide();
             }}
           />
         </Actions>
@@ -90,7 +119,7 @@ export default function Index() {
             <Input placeholder="Please input..." />
           </FormItem>
           <FormItem label="Project" name="project">
-            xxx
+            <Select data={projects} />
           </FormItem>
         </Form>
       </Modal>

@@ -1,0 +1,80 @@
+.trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
+  background: white;
+  transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+  box-sizing: border-box;
+
+  &[data-placeholder]>span:first-child {
+    font-size: 14px;
+    font-weight: 500;
+    color: #a3a3a3;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #a4bcfd;
+  }
+
+  &[data-state="open"] {
+    .icon {
+      transform: rotate(-180deg);
+    }
+  }
+
+  > span:first-child {
+    padding: 0 16px;
+  }
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  transition: transform 0.2s, background 0.2s, border 0.2s;
+  margin: 0 16px 0 0;
+}
+
+.popper {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
+}
+
+.content {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+
+  &:hover {
+    background: #eee;
+  }
+}
+
+.indicator {
+  position: absolute;
+	left: 0;
+	width: 25px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
