@@ -51,11 +51,11 @@ export default function Index() {
   ]);
   const [projects] = useState<Project[]>([
     {
-      label: '@wisdesign/wis',
+      label: 'Wis',
       value: 'wis',
     },
     {
-      label: '@wisdesign/cli',
+      label: 'Cli',
       value: 'cli',
     },
   ]);
